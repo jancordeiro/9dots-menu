@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;	
+	box-sizing: border-box;
+}
+
+:root {
+	--dark-blue: rgb(2, 0, 28);
+	--dar-blue2: rgb(5, 0, 74);
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--dark-blue);
+}
+
+.navigation {
+	background-color: #212121;
+	width: 80px;
+	height: 80px;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	transition: transform 0.4s;
+	cursor: pointer;
+	transition-delay: 0.1s;
+}
+
+.item {
+	width: 8px;
+	height: 8px;
+	border: none;
+	border-radius: 50%;
+	position: absolute;
+	transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+	transition: transform 0.4s, background-color 0.2s, width 0.2s, height 0.2s;
+	transition-delay: calc(0.05s * var(--index));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navigation:hover {
+	transform: scale(4);
+	transition-delay: 0;
+}
+
+.navigation:hover .item {
+	width: 20px;
+	height: 20px;
+	background-color: #707070;
+	transform: translate(calc(25px * var(--x)), calc(25px * var(--y)));
+}
+
+ion-icon {
+	font-size: 0;
+	color: white;
+	transition: font-size 0.2s, color 0.5s;
+	cursor: pointer;
+}
+
+.navigation:hover ion-icon {
+	font-size: 14px;	
+}
+
+ion-icon:hover {
+	color: aqua;
+	filter: drop-shadow(0 0 2px blue);
+}
